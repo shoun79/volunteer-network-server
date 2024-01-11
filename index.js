@@ -6,7 +6,8 @@ const port = process.env.PORT || 5000;
 const jwt = require('jsonwebtoken');
 
 //middleware
-app.use(cors());
+app.use(cors())
+
 app.use(express.json());
 
 
@@ -50,7 +51,7 @@ const verifyJWT = (req, res, next) => {
 async function dbConnect() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        //await client.connect();
 
         const volunteerCollection = client.db('volunteersDB').collection('volunteers')
         const eventCollection = client.db('volunteersDB').collection('events');
